@@ -1,5 +1,5 @@
 function CTA() {
-  return <div>CTA SECTION</div>;
+  return <div className="container mx-auto">CTA SECTION</div>;
 }
 
 export default CTA;

@@ -5,16 +5,16 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <>
+    <div className="flex h-dvh flex-col">
       <Header />
 
-      <main>
+      <main className="container mx-auto grow">
         <Outlet />
       </main>
 
       <CTA />
       <Footer />
-    </>
+    </div>
   );
 }
 

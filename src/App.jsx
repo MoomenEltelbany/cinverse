@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./index.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="bg-surface text-text min-h-screen p-8">
+      <header className="border-border mb-6 flex items-center justify-between border-b pb-4 font-extrabold">
+        <h1 className="text-3xl font-bold text-white">🎬 Cineverse</h1>
+        <button className="bg-primary rounded-(--radius-md) px-4 py-2 font-medium text-white">
+          Sign In
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      </header>
 
-export default App
+      <section className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="bg-card border-border rounded-(--radius-md) border p-4"
+          >
+            <div className="bg-surface mb-3 aspect-2/3 rounded-md"></div>
+            <h2 className="text-lg font-semibold">Movie Title {i + 1}</h2>
+            <p className="text-muted text-sm">2025 • Action</p>
+            <p className="text-accent mt-1 text-sm font-medium">⭐ 8.7</p>
+          </div>
+        ))}
+      </section>
+    </div>
+  );
+}

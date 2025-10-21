@@ -5,23 +5,43 @@
 
 /* --- Cineverse Dark Theme --- */
 @theme {
-  --color-primary: #ff3333;   /* brand red */
-  --color-surface: #0f0f0f;   /* main background */
-  --color-card: #1a1a1a;      /* elevated surfaces / cards */
-  --color-text: #f1f1f3;      /* main text color */
-  --color-muted: #a6a6a6;     /* secondary text */
-  --color-border: #262626;    /* subtle dividers */
-  --color-accent: #ffd166;    /* warm gold accent for highlights */
+  /* 🎬 Brand */
+  --color-brand: #ff3333;             /* primary actions, highlights */
+  --color-brand-hover: #ff5555;
 
+  /* 🧱 Surfaces (background layers) */
+  --color-surface-main: #141414;      /* app background */
+  --color-surface-alt: #0f0f0f;       /* secondary backdrop / sections */
+  --color-surface-card: #1a1a1a;      /* cards, panels, inputs */
+
+  /* ✍️ Text hierarchy */
+  --color-text-primary: #f1f1f3;      /* default readable text */
+  --color-text-secondary: #a6a6a6;    /* metadata, helpers */
+  --color-text-tertiary: #808080;     /* least important text */
+  --color-text-inverse: #0f0f0f;      /* text on brand/light chips */
+
+  /* 🪞 Borders */
+  --color-border-subtle: #262626;     /* default hairlines */
+  --color-border-strong: #3a3a3a;     /* focus/active/selected */
+
+  /* 🌟 Accents & states */
+  --color-accent: #ffd166;            /* ratings, small highlights */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* 🅰️ Typography & radii */
   --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
+  --radius-lg: 1rem;
 }
 
 /* Global base styles */
 @layer base {
   html, body, #root { height: 100%; }
   body {
-    @apply bg-surface text-text antialiased;
+    @apply bg-surface-main text-text-primary antialiased;
     font-family: var(--font-sans);
   }
 }

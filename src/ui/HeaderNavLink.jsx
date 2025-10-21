@@ -9,7 +9,9 @@ function HeaderNavLink({ title, to }) {
           [
             "block rounded-4xl px-3 py-1.5 transition-colors outline-none",
             "focus-visible:ring-primary focus-visible:ring-2",
-            isActive ? "bg-border text-white" : "text-muted hover:text-white",
+            isActive
+              ? "bg-border-subtle text-white"
+              : "text-muted hover:text-white",
           ].join(" ")
         }
       >

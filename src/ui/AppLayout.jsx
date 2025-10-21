@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import CTA from "./CTA";
+import CTASection from "./CTASection";
 import Footer from "./Footer";
 
 function AppLayout() {
@@ -12,7 +12,7 @@ function AppLayout() {
         <Outlet />
       </main>
 
-      <CTA />
+      <CTASection />
       <Footer />
     </div>
   );

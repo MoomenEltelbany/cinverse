@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 function Logo() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center bg-white">
       <Link to="/" className="inline-flex items-center">
         <img
           src={logo}

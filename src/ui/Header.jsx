@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 function Header() {
   return (
     <header className="border-border bg-card/80 sticky top-0 z-30 border-b backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Logo />
         <div className="mx-auto hidden md:block">
           <HeaderNav />

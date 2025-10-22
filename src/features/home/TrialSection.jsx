@@ -19,7 +19,7 @@ function TrialSection() {
             sign up for free trial of Cineverse
           </p>
         </div>
-        <Button>Start a free trial</Button>
+        <Button type="primary">Start a free trial</Button>
       </div>
     </main>
   );

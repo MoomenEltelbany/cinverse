@@ -6,6 +6,7 @@ import SeriesPage from "./ui/SeriesPage";
 import WatchListPage from "./ui/WatchListPage";
 import FavoritesPage from "./ui/FavoritesPage";
 import HomePage from "./pages/HomePage";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,39 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: {
+            duration: 3000,
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              backgroundColor: "#19890f",
+              color: "white",
+              borderRadius: "0.375rem",
+            },
+          },
+          error: {
+            duration: 5000,
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              backgroundColor: "#a50d05",
+              color: "white",
+              borderRadius: "0.375rem",
+            },
+          },
+        }}
+      />
+
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 //  <div className="bg-surface text-text min-h-screen p-8">

@@ -2,7 +2,7 @@ import { FaSearch } from "react-icons/fa";
 
 function SearchBar() {
   return (
-    <div className="border-border bg-card focus-within:ring-text flex items-center gap-2 rounded-(--radius-md) border px-3 py-2 transition-shadow duration-200 focus-within:ring-2">
+    <div className="border-border-subtle bg-card focus-within:ring-text flex items-center gap-2 rounded-(--radius-md) border px-3 py-2 transition-shadow duration-200 focus-within:ring-2">
       <input
         type="text"
         placeholder="Search by name..."

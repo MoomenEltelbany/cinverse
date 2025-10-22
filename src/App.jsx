@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import AppLayout from "./ui/AppLayout";
-import HomePage from "./ui/HomePage";
 import MoviesPage from "./ui/MoviesPage";
 import SeriesPage from "./ui/SeriesPage";
 import WatchListPage from "./ui/WatchListPage";
 import FavoritesPage from "./ui/FavoritesPage";
+import HomePage from "./pages/HomePage";
 
 const router = createBrowserRouter([
   {

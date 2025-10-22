@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Header from "./Header";
 import FooterLinksSection from "./FooterLinksSection";
 import Footer from "./Footer";
@@ -9,6 +9,7 @@ function AppLayout() {
       <Header />
 
       <main className="container mx-auto grow">
+        <ScrollRestoration />
         <Outlet />
       </main>
 

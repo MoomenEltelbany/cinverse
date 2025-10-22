@@ -43,22 +43,25 @@ const DEVICES = [
 function DevicesSection() {
   return (
     <Main>
-      <h2 className="text-text-primary mb-3 text-2xl font-bold">
-        We provide you streaming experiences across various devices
-      </h2>
-      <p className="text-text-tertiary mb-7">
-        With Cineverse, you can enjoy your favorite movies and TV shows anytime,
-        anywhere. Our platform is designed to be compatible with a wide range of
-        devices, ensuring that you never miss a moment of entertainment.
-      </p>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {DEVICES.map((device) => (
-          <DevicesCard
-            label={device.label}
-            icon={device.icon}
-            text={device.text}
-          />
-        ))}
+      <div id="devices">
+        <h2 className="text-text-primary mb-3 text-2xl font-bold">
+          We provide you streaming experiences across various devices
+        </h2>
+        <p className="text-text-tertiary mb-7">
+          With Cineverse, you can enjoy your favorite movies and TV shows
+          anytime, anywhere. Our platform is designed to be compatible with a
+          wide range of devices, ensuring that you never miss a moment of
+          entertainment.
+        </p>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {DEVICES.map((device) => (
+            <DevicesCard
+              label={device.label}
+              icon={device.icon}
+              text={device.text}
+            />
+          ))}
+        </div>
       </div>
     </Main>
   );

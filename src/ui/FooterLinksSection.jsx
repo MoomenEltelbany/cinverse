@@ -5,9 +5,9 @@ const FOOTER_COLUMNS = [
     title: "Home",
     links: [
       { label: "Categories", href: "#" },
-      { label: "Devices", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "FAQ", href: "#" },
+      { label: "Devices", href: "/#devices" },
+      { label: "Pricing", href: "/#plans" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {

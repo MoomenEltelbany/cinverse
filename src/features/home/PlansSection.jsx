@@ -47,7 +47,10 @@ function PlansSection() {
 
   return (
     <Main>
-      <div className="my-7 flex flex-col items-center justify-between gap-0 md:flex-row lg:gap-36">
+      <div
+        id="plans"
+        className="my-7 flex flex-col items-center justify-between gap-0 md:flex-row lg:gap-36"
+      >
         <div>
           <h2 className="text-text-primary mb-3 text-2xl font-bold">
             We provide you streaming experiences across various devices

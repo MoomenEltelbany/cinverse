@@ -1,11 +1,12 @@
 import DevicesSection from "../features/home/DevicesSection";
-import Main from "../ui/Main";
+import TrialSection from "../features/home/TrialSection";
 
 function HomePage() {
   return (
-    <Main>
+    <>
       <DevicesSection />
-    </Main>
+      <TrialSection />
+    </>
   );
 }
 

@@ -24,6 +24,9 @@
   --color-border-subtle: #262626;     /* default hairlines */
   --color-border-strong: #3a3a3a;     /* focus/active/selected */
 
+  /* Buttons */
+  --color-btn-main: #dc2626;       /* button main background */ 
+
   /* 🌟 Accents & states */
   --color-accent: #ffd166;            /* ratings, small highlights */
   --color-success: #22c55e;

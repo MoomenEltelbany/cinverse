@@ -1,4 +1,5 @@
 import DevicesCard from "./DevicesCard";
+import Main from "../../ui/Main";
 import { FiSmartphone } from "react-icons/fi";
 import { FaTablet } from "react-icons/fa";
 import { FaTv } from "react-icons/fa";
@@ -9,7 +10,7 @@ import { GiVrHeadset } from "react-icons/gi";
 const DEVICES = [
   {
     label: "Smartphones",
-    icon: FaTablet,
+    icon: FiSmartphone,
     text: "Cineverse is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or Apple App Store",
   },
   {
@@ -41,7 +42,7 @@ const DEVICES = [
 
 function DevicesSection() {
   return (
-    <>
+    <Main>
       <h2 className="text-text-primary mb-3 text-2xl font-bold">
         We provide you streaming experiences across various devices
       </h2>
@@ -59,7 +60,7 @@ function DevicesSection() {
           />
         ))}
       </div>
-    </>
+    </Main>
   );
 }
 

@@ -7,8 +7,8 @@ function HomePage() {
   return (
     <>
       <DevicesSection />
-      <PlansSection />
       <FAQSection />
+      <PlansSection />
       <TrialSection />
     </>
   );

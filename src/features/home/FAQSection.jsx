@@ -1,5 +1,57 @@
 import Button from "../../ui/Button";
 import Main from "../../ui/Main";
+import AccordionCard from "./AccordionCard";
+
+const FAQ_LIST = [
+  {
+    num: "01",
+    question: "What is Cineverse?",
+    answer:
+      "Cineverse is a streaming service that allows you to watch movies and shows on demand.",
+  },
+  {
+    num: "02",
+    question: "How much does Cineverse cost?",
+    answer:
+      "Cineverse offers multiple plans starting from $9.99/month, with discounts on yearly subscriptions.",
+  },
+  {
+    num: "03",
+    question: "What content is available on Cineverse?",
+    answer:
+      "You'll find a wide range of movies, TV shows, and exclusive releases across all genres.",
+  },
+  {
+    num: "04",
+    question: "How can I watch Cineverse?",
+    answer:
+      "You can stream Cineverse on smartphones, tablets, smart TVs, and web browsers — anytime, anywhere.",
+  },
+  {
+    num: "05",
+    question: "How do I signup for Cineverse?",
+    answer:
+      "Visit cineverse.com, choose a plan, and create an account using your email and payment method.",
+  },
+  {
+    num: "06",
+    question: "What is the Cineverse free trial?",
+    answer:
+      "New users can enjoy a 7-day free trial with full access to Cineverse's content library.",
+  },
+  {
+    num: "07",
+    question: "How do I contact Cineverse customer support?",
+    answer:
+      "You can reach support via live chat, email, or the help center available in your account dashboard.",
+  },
+  {
+    num: "08",
+    question: "What are the Cineverse payment methods?",
+    answer:
+      "Cineverse accepts major credit cards, debit cards, and digital wallets like PayPal and Apple Pay.",
+  },
+];
 
 function FAQSection() {
   return (
@@ -15,7 +67,20 @@ function FAQSection() {
           </p>
         </div>
 
+        {/* TODO: A button that will take to a form to fill a question */}
         <Button>Ask a Question</Button>
+      </div>
+
+      {/* ACCORDION SECTION */}
+      <div className="flex flex-col gap-3">
+        {FAQ_LIST.map((item) => (
+          <AccordionCard
+            key={item.num}
+            num={item.num}
+            question={item.question}
+            answer={item.answer}
+          />
+        ))}
       </div>
     </Main>
   );

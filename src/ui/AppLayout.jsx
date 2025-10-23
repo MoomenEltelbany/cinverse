@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <div className="flex h-dvh flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
 
       <main className="container mx-auto grow">

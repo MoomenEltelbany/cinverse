@@ -14,7 +14,7 @@
 
   /* ✍️ Text hierarchy */
   --color-text-primary: #f1f1f3; /* default readable text */
-  --color-text-secondary: #a6a6a6; /* metadata, helpers */
+  --color-text-secondary: rgb(166, 166, 166); /* metadata, helpers */
   --color-text-tertiary: #808080; /* least important text */
   --color-text-inverse: #0f0f0f; /* text on brand/light chips */
 

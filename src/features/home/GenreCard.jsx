@@ -24,7 +24,7 @@ export function GenreCard({ title }) {
           className="border-border-subtle rounded border"
         />
       </div>
-      <div className="relative z-50 flex items-center justify-between gap-1 px-4 py-2 text-center">
+      <div className="relative z-50 flex items-center justify-around gap-1 px-4 py-2 text-center md:justify-between">
         <button className="cursor-pointer text-sm tracking-wide uppercase">
           {title}
         </button>

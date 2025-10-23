@@ -1,15 +1,24 @@
 import Button from "../../ui/Button";
-import Main from "../../ui/Main";
+
+import trialsImage from "../../assets/trials-image.jpg";
 
 function TrialSection() {
   return (
-    <main
-      className="border-border-subtle m-8 mx-auto max-w-7xl rounded-xl border bg-neutral-900 p-6 tracking-wider sm:p-8 lg:py-14"
-      style={{
-        background: `linear-gradient(to right, #0f0f0f 20%, rgba(255,0,0,0.1))`,
-      }}
-    >
-      <div className="flex flex-col items-center justify-between text-center lg:flex-row lg:text-left">
+    <main className="border-border-subtle relative m-8 mx-auto max-w-7xl overflow-hidden rounded-xl border bg-neutral-900 p-6 tracking-wider sm:p-8 lg:py-14">
+      <div
+        className="absolute inset-0 z-30"
+        style={{
+          background: `linear-gradient(to right, #0f0f0f 30%, rgba(255,0,0,0.2))`,
+        }}
+      ></div>
+      <div className="absolute inset-0">
+        <img
+          src={trialsImage}
+          alt="Free Trials Background image"
+          className="w-full"
+        />
+      </div>
+      <div className="relative z-40 flex flex-col items-center justify-between text-center lg:flex-row lg:text-left">
         <div>
           <h3 className="text-text-primary text-3xl font-semibold">
             Start your free trial today!

@@ -7,7 +7,7 @@ import FavoritesPage from "./ui/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import ErrorPage from "./pages/ErrorPage";
-import MoviesPage from "./pages/MoviesPage";
+import MoviesPage, { loader as moviesPagerLoader } from "./pages/MoviesPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "movies",
         element: <MoviesPage />,
+        loader: moviesPagerLoader,
       },
       {
         path: "series",

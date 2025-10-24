@@ -6,6 +6,8 @@ export function getPopularMovies(page = 1) {
 }
 
 // list all movie genres
-export function getMovieGenres(language = "en-US") {
-  return tmdb("/trending/all/week", `&language=${language}`);
+export async function fetchMovieGenres(language = "en-US") {
+  const { genres } = await tmdb("/genre/movie/list", `&language=${language}`);
+
+  return genres;
 }

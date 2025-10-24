@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import AppLayout from "./ui/AppLayout";
-import MoviesPage from "./ui/MoviesPage";
 import SeriesPage from "./ui/SeriesPage";
 import WatchListPage from "./ui/WatchListPage";
 import FavoritesPage from "./ui/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import ErrorPage from "./pages/ErrorPage";
+import MoviesPage from "./pages/MoviesPage";
 
 const router = createBrowserRouter([
   {

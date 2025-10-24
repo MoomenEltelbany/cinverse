@@ -3,6 +3,7 @@ import Header from "./Header";
 import FooterLinksSection from "./FooterLinksSection";
 import Footer from "./Footer";
 import Loader from "./Loader";
+import ErrorPage from "../pages/ErrorPage";
 
 function AppLayout() {
   const navigation = useNavigation();

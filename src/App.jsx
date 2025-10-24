@@ -7,6 +7,7 @@ import WatchListPage from "./ui/WatchListPage";
 import FavoritesPage from "./ui/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: <FavoritesPage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },

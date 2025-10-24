@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import ErrorPage from "./pages/ErrorPage";
 import MoviesPage, { loader as moviesPagerLoader } from "./pages/MoviesPage";
+import MovieDetails from "./features/movies/MovieDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "movies",
         element: <MoviesPage />,
         loader: moviesPagerLoader,
+      },
+      {
+        path: "movies/:movieId",
+        element: <MovieDetails />,
       },
       {
         path: "series",

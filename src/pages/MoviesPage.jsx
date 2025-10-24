@@ -2,27 +2,30 @@
 import { useLoaderData } from "react-router-dom";
 import MoviesHero from "../features/movies/MoviesHero";
 import MoviesTitle from "../features/movies/MoviesTitle";
-import { fetchMovieGenres } from "../services/moviesAPI";
+import { fetchMovieGenres, fetchTopRatedMovies } from "../services/moviesAPI";
 import MoviesGenres from "../features/movies/MoviesGenres";
+import TopRatedMovies from "../features/movies/TopRatedMovies";
 
 function MoviesPage() {
-  const genres = useLoaderData();
-
-  console.log(genres);
+  const { genres, topRatedMovies } = useLoaderData();
 
   return (
     <>
       <MoviesHero />
       <MoviesTitle />
       <MoviesGenres genres={genres} />
+      <TopRatedMovies topRatedMovies={topRatedMovies} />
     </>
   );
 }
 
 export async function loader() {
-  const data = await fetchMovieGenres();
+  const [genres, topRatedMovies] = await Promise.all([
+    fetchMovieGenres(),
+    fetchTopRatedMovies(),
+  ]);
 
-  return data;
+  return { genres, topRatedMovies };
 }
 
 export default MoviesPage;

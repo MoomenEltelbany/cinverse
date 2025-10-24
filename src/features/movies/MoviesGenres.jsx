@@ -13,6 +13,10 @@ function MoviesGenres({ genres }) {
       <h2 className="text-text-primary text-center text-3xl font-semibold uppercase">
         Our Genres
       </h2>
+      <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
+        Explore the worlds behind every story—from epic battles to heartfelt
+        moments.
+      </p>
       <div className="my-5 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
         {(showAll ? genres : previewGenres).map((genre) => (
           <GenreCard name={genre.name} key={genre.id} genreId={genre.id} />

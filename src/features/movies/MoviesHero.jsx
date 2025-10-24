@@ -1,4 +1,4 @@
-import heroImage from "../../assets/hero-bg.jpg";
+import moviesSection from "../../assets/movies_section.jpg";
 import Button from "../../ui/Button";
 
 function MoviesHero() {
@@ -13,21 +13,21 @@ function MoviesHero() {
       ></div>
       <div className="max-h-dvh">
         <img
-          src={heroImage}
+          src={moviesSection}
           alt="The hero section background"
           className="h-dvh w-full object-cover"
         />
       </div>
       <div className="absolute inset-0 top-[30%] z-20 flex flex-col items-center justify-center px-4 text-center">
         <h2 className="text-text-primary text-lg font-semibold uppercase lg:text-4xl">
-          The best streaming experience
+          Explore the World of Movies
         </h2>
         <p className="text-text-secondary my-5 max-w-3xl text-sm leading-relaxed lg:text-lg">
-          Cineverse is the best streaming experience for watching your favorite
-          movies and shows on demand, anytime, anywhere. With Cineverse, you can
-          enjoy a wide variety of content including the latest blockbusters,
-          class movies, popular TV shows and more. You can also crete your own
-          watch lists, so you can easily find the content you want to watch
+          Dive into our curated collection of films—from timeless classics to
+          the latest blockbusters. Whether you're in the mood for heart-pounding
+          action, emotional drama, or laugh-out-loud comedy, our movie library
+          has something for every kind of movies. Discover, watch, and build
+          your personal watchlist with ease.
         </p>
         <Button>Start Watching Now</Button>
       </div>

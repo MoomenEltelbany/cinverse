@@ -39,3 +39,24 @@ export async function fetchMovieGenres(language = "en-US") {
 
   return genres;
 }
+
+// list all movies playing now in theatres
+export async function fetchNowPlayingMovies() {
+  const data = await tmdb("/movie/now_playing");
+
+  return data;
+}
+
+// list all the upcoming movies
+export async function fetchUpcomingMovies() {
+  const data = await tmdb("/movie/upcoming");
+
+  return data;
+}
+
+// list all the upcoming movies
+export async function fetchPopularMovies() {
+  const data = await tmdb("/movie/popular");
+
+  return data;
+}

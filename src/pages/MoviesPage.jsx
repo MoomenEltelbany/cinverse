@@ -2,30 +2,80 @@
 import { useLoaderData } from "react-router-dom";
 import MoviesHero from "../features/movies/MoviesHero";
 import MoviesTitle from "../features/movies/MoviesTitle";
-import { fetchMovieGenres, fetchTopRatedMovies } from "../services/moviesAPI";
+import {
+  fetchMovieGenres,
+  fetchTopRatedMovies,
+  fetchNowPlayingMovies,
+  fetchUpcomingMovies,
+  fetchPopularMovies,
+} from "../services/moviesAPI";
 import MoviesGenres from "../features/movies/MoviesGenres";
-import TopRatedMovies from "../features/movies/TopRatedMovies";
+import MoviesSection from "../features/movies/MoviesSection";
 
 function MoviesPage() {
-  const { genres, topRatedMovies } = useLoaderData();
+  const {
+    genres,
+    topRatedMovies,
+    nowPlayingMovies,
+    upcomingMovies,
+    popularMovies,
+  } = useLoaderData();
 
   return (
     <>
       <MoviesHero />
       <MoviesTitle />
       <MoviesGenres genres={genres} />
-      <TopRatedMovies topRatedMovies={topRatedMovies} />
+      <MoviesSection
+        title="Our Top Rated Movies"
+        text="Critically acclaimed and loved by audiences—these are the must-watch
+        masterpieces."
+        moviesArray={topRatedMovies.results}
+      />
+      <MoviesSection
+        title="Now Playing in Theatres"
+        text="Fresh from the big screen, these are the stories lighting up theatres
+        right now."
+        moviesArray={nowPlayingMovies.results}
+        sectionId="now"
+      />
+      <MoviesSection
+        title="Coming Soon to Theatres"
+        text="A sneak peek at the most anticipated releases hitting theatres soon."
+        moviesArray={upcomingMovies.results}
+        sectionId="soon"
+      />
+      <MoviesSection
+        title="Hot Picks of the Moment"
+        text="These are the films lighting up screens and sparking conversations—see what's trending right now."
+        moviesArray={popularMovies.results}
+      />
     </>
   );
 }
 
 export async function loader() {
-  const [genres, topRatedMovies] = await Promise.all([
+  const [
+    genres,
+    topRatedMovies,
+    nowPlayingMovies,
+    upcomingMovies,
+    popularMovies,
+  ] = await Promise.all([
     fetchMovieGenres(),
     fetchTopRatedMovies(),
+    fetchNowPlayingMovies(),
+    fetchUpcomingMovies(),
+    fetchPopularMovies(),
   ]);
 
-  return { genres, topRatedMovies };
+  return {
+    genres,
+    topRatedMovies,
+    nowPlayingMovies,
+    upcomingMovies,
+    popularMovies,
+  };
 }
 
 export default MoviesPage;

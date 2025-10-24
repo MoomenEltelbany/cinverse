@@ -3,7 +3,6 @@ import Header from "./Header";
 import FooterLinksSection from "./FooterLinksSection";
 import Footer from "./Footer";
 import Loader from "./Loader";
-import ErrorPage from "../pages/ErrorPage";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -13,11 +12,10 @@ function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      {isLoading && <Loader />}
 
       <main className="container mx-auto grow">
         <ScrollRestoration />
-        <Outlet />
+        {isLoading ? <Loader /> : <Outlet />}
       </main>
 
       <FooterLinksSection />

@@ -60,3 +60,10 @@ export async function fetchPopularMovies() {
 
   return data;
 }
+
+// get a movie based on the ID
+export async function fetchMovieById(id) {
+  const data = await tmdb(`/movie/${id}`);
+
+  return data;
+}

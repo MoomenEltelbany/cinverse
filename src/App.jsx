@@ -1,14 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
 import "./index.css";
+
 import AppLayout from "./ui/AppLayout";
 import SeriesPage from "./ui/SeriesPage";
 import WatchListPage from "./ui/WatchListPage";
 import FavoritesPage from "./ui/FavoritesPage";
 import HomePage from "./pages/HomePage";
-import { Toaster } from "react-hot-toast";
 import ErrorPage from "./pages/ErrorPage";
 import MoviesPage, { loader as moviesPagerLoader } from "./pages/MoviesPage";
-import MovieDetails from "./features/movies/MovieDetails";
+import MovieDetails, {
+  loader as movieDetailsLoader,
+} from "./features/movies/MovieDetails";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "movies/:movieId",
         element: <MovieDetails />,
+        loader: movieDetailsLoader,
       },
       {
         path: "series",

@@ -3,6 +3,7 @@ import Header from "./Header";
 import FooterLinksSection from "./FooterLinksSection";
 import Footer from "./Footer";
 import Loader from "./Loader";
+import TrialSection from "../features/home/TrialSection";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -18,6 +19,7 @@ function AppLayout() {
         {isLoading ? <Loader /> : <Outlet />}
       </main>
 
+      <TrialSection />
       <FooterLinksSection />
       <Footer />
     </div>

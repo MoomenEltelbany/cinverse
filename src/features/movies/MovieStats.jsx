@@ -8,7 +8,7 @@ import MovieStatData from "./MovieStatData";
 function MovieStats({ movie }) {
   return (
     <Main>
-      <div className="text-text-primary flex min-w-2xs grow flex-col gap-5">
+      <div className="text-text-primary flex min-w-2xs grow flex-col gap-5 lg:max-h-fit">
         <MovieStatData icon={FaCalendar} title="Release year">
           {formatDate(movie.release_date)}
         </MovieStatData>
@@ -16,7 +16,10 @@ function MovieStats({ movie }) {
         <MovieStatData icon={LuLanguages} title="Available languages">
           <div className="flex flex-wrap gap-2">
             {movie?.spoken_languages.map((lang) => (
-              <p className="bg-surface-alt w-fit rounded px-2 py-1">
+              <p
+                className="bg-surface-alt w-fit rounded px-2 py-1"
+                key={lang.name}
+              >
                 {lang.name}
               </p>
             ))}
@@ -30,7 +33,10 @@ function MovieStats({ movie }) {
         <MovieStatData icon={LuBlocks} title="Genres">
           <div className="flex flex-wrap gap-2">
             {movie?.genres.map((genre) => (
-              <p className="bg-surface-alt w-fit rounded px-2 py-1">
+              <p
+                className="bg-surface-alt w-fit rounded px-2 py-1"
+                key={genre.name}
+              >
                 {genre.name}
               </p>
             ))}

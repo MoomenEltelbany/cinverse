@@ -7,7 +7,7 @@ function MovieStatData({ title, icon: Icon, children }) {
         </span>
         {title}
       </h3>
-      <p>{children}</p>
+      <div>{children}</div>
     </div>
   );
 }

@@ -2,15 +2,19 @@ import MediaImage from "../../ui/MediaImage";
 
 function MovieCastCard({ cast }) {
   return (
-    <div className="bg-surface-alt flex w-[200px] flex-col items-center justify-center rounded px-4 py-2 text-center">
+    <div className="bg-surface-alt flex min-h-64 w-full flex-col items-center rounded px-4 py-4 text-center">
       <MediaImage
         path={cast.profile_path}
         alt={`Photo of ${cast.name}`}
         size="w92"
-        className="h-auto w-24 rounded-md"
+        className="mx-auto h-auto w-24 rounded-md"
       />
-      <p className="text-md text-text-primary">{cast.name}</p>
-      <p className="text-text-secondary text-sm">{cast.character}</p>
+      <p className="text-md text-text-primary wrap-break-words mt-2 leading-tight">
+        {cast.name}
+      </p>
+      <p className="text-text-secondary wrap-break-words text-sm leading-snug">
+        {cast.character}
+      </p>
     </div>
   );
 }

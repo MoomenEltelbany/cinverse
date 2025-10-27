@@ -15,25 +15,22 @@ function MovieDetails() {
   return (
     <section>
       <MovieHero movie={movie} />
-      <div className="flex flex-row flex-wrap-reverse gap-4 lg:flex-nowrap">
-        <div>
-          {/* First Part of description */}
+
+      <div className="flex flex-col-reverse gap-6 lg:flex-row lg:gap-4">
+        {/* Main content: description, cast, overview */}
+        <div className="min-w-0 flex-1">
           <MovieDescription movie={movie} />
-
-          {/* Third part that will have the cast */}
           <MovieCast castData={castData} />
-
-          {/* Forth part that will shows the reviews */}
-          <div className="">
-            <Main>
-              <h3>Overviews</h3>
-              <p>Overviews section</p>
-            </Main>
-          </div>
+          <Main>
+            <h3>Overviews</h3>
+            <p>Overviews section</p>
+          </Main>
         </div>
 
-        {/* Second part that will shows the release year, genres, ratings, etc */}
-        <MovieStats movie={movie} />
+        {/* Sidebar: stats */}
+        <div className="w-full shrink-0 lg:w-[300px]">
+          <MovieStats movie={movie} />
+        </div>
       </div>
     </section>
   );

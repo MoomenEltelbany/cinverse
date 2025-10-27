@@ -2,8 +2,8 @@ import MediaImage from "../../ui/MediaImage";
 
 function MovieHero({ movie }) {
   return (
-    <div className="relative h-dvh overflow-hidden">
-      {/* The overlay element */}
+    <div className="relative h-fit overflow-hidden lg:h-svh">
+      {/* Overlay */}
       <div
         className="pointer-events-none absolute inset-0 z-10"
         style={{
@@ -11,24 +11,28 @@ function MovieHero({ movie }) {
             "linear-gradient(to bottom, rgba(42,42,42,0.5), #000 80%)",
         }}
       ></div>
-      {/* The Title and hero image */}
-      <div className="max-h-dvh">
+
+      {/* Hero image */}
+      <div className="max-h-svh">
         <MediaImage
-          path={movie["backdrop_path"]}
+          path={movie.backdrop_path}
           alt={`${movie.title} Image`}
           size="original"
+          className="h-full w-full object-cover"
         />
-        <div className="text-text-primary absolute inset-0 top-[30%] z-50 flex flex-col items-center justify-center">
-          <h3 className="text-text-tertiary mb-3 text-2xl font-bold uppercase">
-            Featured Title
-          </h3>
-          <p className="text-text-secondary mb-4 text-4xl font-semibold">
-            {movie.title}
-          </p>
-          <p className="text-text-tertiary text-xl font-medium italic">
-            {movie.tagline}
-          </p>
-        </div>
+      </div>
+
+      {/* Text overlay */}
+      <div className="absolute inset-0 z-50 flex flex-col items-center justify-center px-4 text-center">
+        <h3 className="text-text-primary mb-2 text-base font-bold uppercase sm:text-xl">
+          Featured Title
+        </h3>
+        <p className="text-text-secondary mb-3 text-2xl leading-tight font-semibold sm:text-4xl">
+          {movie.title}
+        </p>
+        <p className="text-text-tertiary text-sm leading-snug font-medium italic sm:text-xl">
+          {movie.tagline}
+        </p>
       </div>
     </div>
   );

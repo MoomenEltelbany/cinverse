@@ -1,57 +1,28 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
 
-import { fetchMovieById } from "../../services/moviesAPI";
+import { fetchMovieById, fetchMovieCastById } from "../../services/moviesAPI";
 
-import MediaImage from "../../ui/MediaImage";
 import Main from "../../ui/Main";
 import MovieStats from "./MovieStats";
 import MovieDescription from "./MovieDescription";
+import MovieCast from "./MovieCast";
+import MovieHero from "./MovieHero";
 
 function MovieDetails() {
-  const movie = useLoaderData();
-
-  console.log(movie);
+  const { movie, castData } = useLoaderData();
 
   return (
     <section>
-      <div className="relative h-dvh overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 z-10"
-          style={{
-            backgroundImage:
-              "linear-gradient(to bottom, rgba(42,42,42,0.5), #000 80%)",
-          }}
-        ></div>
-        <div className="max-h-dvh">
-          <MediaImage
-            path={movie["backdrop_path"]}
-            alt={`${movie.title} Image`}
-            size="original"
-          />
-          <div className="text-text-primary absolute inset-0 top-[30%] z-50 flex flex-col items-center justify-center">
-            <h3 className="mb-3 text-4xl font-bold uppercase">
-              Featured Title
-            </h3>
-            <p className="text-text-secondary text-4xl font-semibold">
-              {movie.title}
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <MovieHero movie={movie} />
       <div className="flex flex-row flex-wrap-reverse gap-4 lg:flex-nowrap">
         <div>
           {/* First Part of description */}
           <MovieDescription movie={movie} />
 
           {/* Third part that will have the cast */}
-          <div className="">
-            <Main>
-              <h3>Cast</h3>
-              <p>Here will be the cast</p>
-            </Main>
-          </div>
+          <MovieCast castData={castData} />
+
           {/* Forth part that will shows the reviews */}
           <div className="">
             <Main>
@@ -69,9 +40,12 @@ function MovieDetails() {
 }
 
 export async function loader({ params }) {
-  const data = await fetchMovieById(params.movieId);
+  const [movie, castData] = await Promise.all([
+    fetchMovieById(params.movieId),
+    fetchMovieCastById(params.movieId),
+  ]);
 
-  return data;
+  return { movie, castData };
 }
 
 export default MovieDetails;

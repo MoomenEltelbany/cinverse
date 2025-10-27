@@ -61,9 +61,16 @@ export async function fetchPopularMovies() {
   return data;
 }
 
-// get a movie based on the ID
+// get a movie based on the movie ID
 export async function fetchMovieById(id) {
   const data = await tmdb(`/movie/${id}`);
+
+  return data;
+}
+
+// get a movie's Cast based on the movie ID
+export async function fetchMovieCastById(id) {
+  const data = await tmdb(`/movie/${id}/credits`);
 
   return data;
 }

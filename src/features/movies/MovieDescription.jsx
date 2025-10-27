@@ -1,6 +1,6 @@
 import Main from "../../ui/Main";
 
-export function MovieDescription({ movie }) {
+function MovieDescription({ movie }) {
   return (
     <Main>
       <h3 className="text-text-secondary mb-2 text-xl">Description</h3>

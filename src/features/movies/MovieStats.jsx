@@ -5,7 +5,7 @@ import { LuLanguages, LuBlocks } from "react-icons/lu";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import MovieStatData from "./MovieStatData";
 
-export function MovieStats({ movie }) {
+function MovieStats({ movie }) {
   return (
     <Main>
       <div className="text-text-primary flex min-w-2xs grow flex-col gap-5">

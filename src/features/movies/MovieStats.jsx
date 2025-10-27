@@ -48,3 +48,5 @@ export function MovieStats({ movie }) {
     </Main>
   );
 }
+
+export default MovieStats;

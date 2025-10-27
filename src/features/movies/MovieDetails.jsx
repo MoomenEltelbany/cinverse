@@ -1,10 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
-import { fetchMovieById, getGenreName } from "../../services/moviesAPI";
+
+import { fetchMovieById } from "../../services/moviesAPI";
+
 import MediaImage from "../../ui/MediaImage";
 import Main from "../../ui/Main";
-import { MovieStats } from "./MovieStats";
-import { MovieDescription } from "./MovieDescription";
+import MovieStats from "./MovieStats";
+import MovieDescription from "./MovieDescription";
 
 function MovieDetails() {
   const movie = useLoaderData();

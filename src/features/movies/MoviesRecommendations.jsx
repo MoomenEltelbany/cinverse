@@ -7,7 +7,7 @@ function MoviesRecommendations({ movies }) {
   return (
     <Main>
       <h3 className="text-text-secondary mb-2 text-xl">
-        Movies recommendations based on your choice
+        Movies You Might Like
       </h3>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {chosenMovies.map((movie) => (

@@ -1,15 +1,20 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
 
-import { fetchMovieById, fetchMovieCastById } from "../../services/moviesAPI";
+import {
+  fetchMovieById,
+  fetchMovieCastById,
+  fetchMoviesRecommendations,
+} from "../../services/moviesAPI";
 
 import MovieStats from "./MovieStats";
 import MovieDescription from "./MovieDescription";
 import MovieCast from "./MovieCast";
 import MovieHero from "./MovieHero";
+import MoviesRecommendations from "./MoviesRecommendations";
 
 function MovieDetails() {
-  const { movie, castData } = useLoaderData();
+  const { movie, castData, moviesRecommendations } = useLoaderData();
 
   return (
     <section>
@@ -27,17 +32,19 @@ function MovieDetails() {
           <MovieStats movie={movie} />
         </div>
       </div>
+      <MoviesRecommendations movies={moviesRecommendations} />
     </section>
   );
 }
 
 export async function loader({ params }) {
-  const [movie, castData] = await Promise.all([
+  const [movie, castData, moviesRecommendations] = await Promise.all([
     fetchMovieById(params.movieId),
     fetchMovieCastById(params.movieId),
+    fetchMoviesRecommendations(params.movieId),
   ]);
 
-  return { movie, castData };
+  return { movie, castData, moviesRecommendations };
 }
 
 export default MovieDetails;

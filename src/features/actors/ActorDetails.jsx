@@ -9,7 +9,6 @@ import ActorImage from "./ActorImage";
 /* eslint-disable react-refresh/only-export-components */
 function ActorDetails() {
   const { actor, credits } = useLoaderData();
-  console.log(credits);
 
   return (
     <Main>

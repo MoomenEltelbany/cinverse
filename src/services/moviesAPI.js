@@ -74,3 +74,10 @@ export async function fetchMovieCastById(id) {
 
   return data;
 }
+
+// get some movies recommendation based on the movie selected by the user
+export async function fetchMoviesRecommendations(id) {
+  const data = await tmdb(`/movie/${id}/recommendations`);
+
+  return data;
+}

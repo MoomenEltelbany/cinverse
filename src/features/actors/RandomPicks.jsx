@@ -11,7 +11,7 @@ function RandomPicks({ credits }) {
         {credits.map((credit) => (
           <div
             key={credit.id}
-            className="bg-surface-alt flex min-w-[140px] shrink-0 flex-col rounded p-2 shadow-sm"
+            className="bg-surface-alt border-border-strong flex min-w-[140px] shrink-0 flex-col rounded border p-2 shadow-sm transition-transform duration-200 hover:scale-105"
           >
             <div className="mb-5">
               <MediaImage

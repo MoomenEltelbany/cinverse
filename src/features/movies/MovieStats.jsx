@@ -14,16 +14,14 @@ function MovieStats({ movie }) {
         </MovieStatData>
 
         <MovieStatData icon={LuLanguages} title="Available languages">
-          <div className="flex flex-wrap gap-2">
-            {movie?.spoken_languages.map((lang) => (
-              <p
-                className="bg-surface-alt w-fit rounded px-2 py-1"
-                key={lang.name}
-              >
-                {lang.name}
-              </p>
-            ))}
-          </div>
+          {movie?.spoken_languages.map((lang) => (
+            <p
+              className="bg-surface-alt w-fit rounded px-2 py-1"
+              key={lang.name}
+            >
+              {lang.name}
+            </p>
+          ))}
         </MovieStatData>
 
         <MovieStatData icon={FaRegStar} title="Ratings">

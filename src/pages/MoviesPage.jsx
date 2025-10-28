@@ -28,9 +28,9 @@ function MoviesPage() {
       <MoviesGenres genres={genres} />
       <MoviesSection
         title="Our Top Rated Movies"
-        text="Critically acclaimed and loved by audiences—these are the must-watch
-        masterpieces."
+        text="Critically acclaimed and loved by audiences—these are the must-watch masterpieces."
         moviesArray={topRatedMovies.results}
+        fetchMore={fetchTopRatedMovies}
       />
       <MoviesSection
         title="Now Playing in Theatres"
@@ -49,6 +49,7 @@ function MoviesPage() {
         title="Hot Picks of the Moment"
         text="These are the films lighting up screens and sparking conversations—see what's trending right now."
         moviesArray={popularMovies.results}
+        fetchMore={fetchPopularMovies}
       />
     </>
   );

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function TopRatedMovieCard({ movie }) {
   return (
-    <div className="bg-surface-card border-border-subtle flex flex-col gap-2 rounded border p-5 shadow shadow-black transition-all duration-200 hover:scale-105">
+    <div className="bg-surface-card border-border-subtle flex h-[650px] flex-col gap-2 rounded border p-5 shadow shadow-black">
       <div className="mx-auto">
         <MediaImage path={movie.poster_path} />
       </div>
@@ -16,7 +16,10 @@ function TopRatedMovieCard({ movie }) {
       <p>⭐ {movie.vote_average}</p>
       <div className="flex flex-wrap gap-1.5">
         {movie["genre_ids"].map((item) => (
-          <span className="bg-surface-main inline-block rounded px-2 py-1">
+          <span
+            className="bg-surface-main inline-block rounded px-2 py-1"
+            key={item}
+          >
             {getGenreName(item)}
           </span>
         ))}

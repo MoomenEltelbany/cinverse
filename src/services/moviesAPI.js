@@ -55,9 +55,8 @@ export async function fetchUpcomingMovies() {
 }
 
 // list all the upcoming movies
-export async function fetchPopularMovies() {
-  const data = await tmdb("/movie/popular");
-
+export async function fetchPopularMovies(page = 1) {
+  const data = await tmdb("/movie/popular", `&page=${page}`);
   return data;
 }
 

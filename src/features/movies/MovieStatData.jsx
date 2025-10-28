@@ -8,7 +8,7 @@ function MovieStatData({ title, icon: Icon, children }) {
         </span>
         {title}
       </h3>
-      <div>{children}</div>
+      <div className="flex flex-wrap gap-3">{children}</div>
     </div>
   );
 }

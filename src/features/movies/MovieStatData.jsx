@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function MovieStatData({ title, icon: Icon, children }) {
   return (
     <div>

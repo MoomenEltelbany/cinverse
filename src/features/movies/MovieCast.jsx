@@ -1,9 +1,10 @@
 import Main from "../../ui/Main";
 import MovieCastCard from "./MovieCastCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function MovieCast({ castData }) {
   const { cast } = castData;
@@ -17,7 +18,10 @@ function MovieCast({ castData }) {
 
       <div className="bg-surface-card rounded px-4 py-6">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Pagination]}
+          pagination={{
+            clickable: true,
+          }}
           navigation
           spaceBetween={24}
           slidesPerView={2}

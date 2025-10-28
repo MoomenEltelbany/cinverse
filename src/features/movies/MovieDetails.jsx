@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 
 import { fetchMovieById, fetchMovieCastById } from "../../services/moviesAPI";
 
-import Main from "../../ui/Main";
 import MovieStats from "./MovieStats";
 import MovieDescription from "./MovieDescription";
 import MovieCast from "./MovieCast";
@@ -21,10 +20,6 @@ function MovieDetails() {
         <div className="min-w-0 flex-1">
           <MovieDescription movie={movie} />
           <MovieCast castData={castData} />
-          <Main>
-            <h3>Overviews</h3>
-            <p>Overviews section</p>
-          </Main>
         </div>
 
         {/* Sidebar: stats */}

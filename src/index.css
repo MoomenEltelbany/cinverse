@@ -57,6 +57,10 @@ html {
 }
 
 /* In your global CSS or Tailwind config */
+
+.swiper {
+  position: relative !important;
+}
 .swiper-button-next,
 .swiper-button-prev {
   color: red !important; /* or your theme color */
@@ -74,4 +78,14 @@ html {
 .swiper-button-prev::after {
   font-size: 1rem;
   font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  margin-bottom: -10px !important;
+  width: 10px !important;
+  height: 10px !important;
+  text-align: center;
+  color: black !important;
+  opacity: 1;
+  background: rgba(215, 4, 4) !important;
 }

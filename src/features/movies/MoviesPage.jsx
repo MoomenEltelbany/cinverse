@@ -1,16 +1,18 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
-import MoviesHero from "../features/movies/MoviesHero";
-import MoviesTitle from "../features/movies/MoviesTitle";
+
+import MoviesHero from "./MoviesHero";
+import MoviesTitle from "./MoviesTitle";
+import MoviesGenres from "./MoviesGenres";
+import MoviesSection from "./MoviesSection";
+
 import {
   fetchMovieGenres,
   fetchTopRatedMovies,
   fetchNowPlayingMovies,
   fetchUpcomingMovies,
   fetchPopularMovies,
-} from "../services/moviesAPI";
-import MoviesGenres from "../features/movies/MoviesGenres";
-import MoviesSection from "../features/movies/MoviesSection";
+} from "../../services/moviesAPI";
 
 function MoviesPage() {
   const {

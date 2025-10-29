@@ -1,5 +1,5 @@
 import heroImage from "../../assets/hero-bg.jpg";
-import Button from "../../ui/Button";
+import Button from "../../components/common/Button";
 
 function HeroSection() {
   return (

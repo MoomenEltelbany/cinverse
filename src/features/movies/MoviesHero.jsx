@@ -1,5 +1,5 @@
 import moviesSection from "../../assets/movies_section.jpg";
-import Button from "../../ui/Button";
+import Button from "../../components/common/Button";
 
 function MoviesHero() {
   return (

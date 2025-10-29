@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 import GenreCard from "./GenreCard";
-import Button from "../../ui/Button";
+import Button from "../../components/common/Button";
 
 function MoviesGenres({ genres }) {
   const [showAll, setShowAll] = useState(false);

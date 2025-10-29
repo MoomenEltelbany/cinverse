@@ -1,5 +1,5 @@
 import DevicesCard from "./DevicesCard";
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 import { FiSmartphone } from "react-icons/fi";
 import { FaTablet } from "react-icons/fa";
 import { FaTv } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 import MovieCastCard from "./MovieCastCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import MovieCard from "./MovieCard";
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";

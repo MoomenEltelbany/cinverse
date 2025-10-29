@@ -1,4 +1,4 @@
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 
 function MovieDescription({ movie }) {
   return (

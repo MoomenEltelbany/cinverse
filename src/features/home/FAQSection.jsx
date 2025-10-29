@@ -1,5 +1,5 @@
-import Button from "../../ui/Button";
-import Main from "../../ui/Main";
+import Button from "../../components/common/Button";
+import Main from "../../components/common/Main";
 import AccordionCard from "./AccordionCard";
 
 const FAQ_LIST = [

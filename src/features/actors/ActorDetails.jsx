@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { fetchActorDetails, fetchActorCredits } from "../../services/actorsApi";
-import Main from "../../ui/Main";
-import MediaImage from "../../ui/MediaImage";
+import Main from "../../components/common/Main";
+import MediaImage from "../../components/common/MediaImage";
 import RandomPicks from "./RandomPicks";
 import ActorProfile from "./ActorProfile";
 import ActorImage from "./ActorImage";

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Main from "../../ui/Main";
-import MediaImage from "../../ui/MediaImage";
+import Main from "../../components/common/Main";
+import MediaImage from "../../components/common/MediaImage";
 
 function MoviesRecommendations({ movies }) {
   const chosenMovies = movies.results.slice(0, 5);

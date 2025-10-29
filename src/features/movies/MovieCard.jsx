@@ -1,6 +1,6 @@
 import { formatDate } from "../../utils/dateUtils";
 import { getGenreName } from "../../services/moviesAPI";
-import MediaImage from "../../ui/MediaImage";
+import MediaImage from "../../components/common/MediaImage";
 import { Link } from "react-router-dom";
 
 function TopRatedMovieCard({ movie }) {

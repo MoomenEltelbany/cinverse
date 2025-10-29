@@ -1,4 +1,4 @@
-import Button from "../../ui/Button";
+import Button from "../../components/common/Button";
 
 import trialsImage from "../../assets/trials-image.jpg";
 

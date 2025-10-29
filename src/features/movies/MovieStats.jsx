@@ -1,4 +1,4 @@
-import Main from "../../ui/Main";
+import Main from "../../components/common/Main";
 import { formatDate, formatRuntime } from "../../utils/dateUtils";
 import { FaCalendar, FaRegStar, FaRegMoneyBillAlt } from "react-icons/fa";
 import { LuLanguages, LuBlocks } from "react-icons/lu";

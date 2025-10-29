@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import Button from "../../ui/Button";
+import Button from "../../components/common/Button";
 
 function PlanCard({ title, text, plan, subscribed, onSubscribed }) {
   function handleTrial() {

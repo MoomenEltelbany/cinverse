@@ -2,8 +2,8 @@ import { Outlet, ScrollRestoration, useNavigation } from "react-router-dom";
 import Header from "./Header";
 import FooterLinksSection from "./FooterLinksSection";
 import Footer from "./Footer";
-import Loader from "./Loader";
-import TrialSection from "../features/home/TrialSection";
+import Loader from "../common/Loader";
+import TrialSection from "../../features/home/TrialSection";
 
 function AppLayout() {
   const navigation = useNavigation();

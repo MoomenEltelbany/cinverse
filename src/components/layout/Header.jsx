@@ -1,6 +1,6 @@
 import HeaderNav from "./HeaderNav";
 import Logo from "./Logo";
-import SearchBar from "./SearchBar";
+import SearchBar from "../common/SearchBar";
 
 function Header() {
   return (

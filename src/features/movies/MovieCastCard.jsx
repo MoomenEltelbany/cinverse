@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MediaImage from "../../ui/MediaImage";
+import MediaImage from "../../components/common/MediaImage";
 
 function MovieCastCard({ cast }) {
   return (

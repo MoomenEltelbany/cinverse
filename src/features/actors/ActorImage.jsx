@@ -1,4 +1,4 @@
-import MediaImage from "../../ui/MediaImage";
+import MediaImage from "../../components/common/MediaImage";
 
 function ActorImage({ actor }) {
   return (

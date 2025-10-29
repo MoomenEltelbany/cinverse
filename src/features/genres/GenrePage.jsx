@@ -1,7 +1,7 @@
 import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { fetchMoviesByGenre } from "../../services/genresApi";
-import Main from "../../ui/Main";
-import MediaImage from "../../ui/MediaImage";
+import Main from "../../components/common/Main";
+import MediaImage from "../../components/common/MediaImage";
 
 /* eslint-disable react-refresh/only-export-components */
 function GenrePage() {

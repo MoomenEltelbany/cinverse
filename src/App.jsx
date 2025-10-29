@@ -4,12 +4,14 @@ import { Toaster } from "react-hot-toast";
 import "./index.css";
 
 import AppLayout from "./components/layout/AppLayout";
-import SeriesPage from "./features/series/SeriesPage";
 import WatchListPage from "./features/watchlist/WatchListPage";
 import FavoritesPage from "./features/favorites/FavoritesPage";
 import HomePage from "./features/home/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 
+import SeriesPage, {
+  loader as seriesPageLoader,
+} from "./features/series/SeriesPage";
 import MoviesPage, {
   loader as moviesPagerLoader,
 } from "./features/movies/MoviesPage";
@@ -54,6 +56,7 @@ const router = createBrowserRouter([
       {
         path: "series",
         element: <SeriesPage />,
+        loader: seriesPageLoader,
       },
       {
         path: "watchlist",

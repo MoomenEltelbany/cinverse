@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MediaImage from "../../components/common/MediaImage";
 
 function RandomPicks({ credits }) {
@@ -28,6 +29,12 @@ function RandomPicks({ credits }) {
             <p className="text-text-secondary text-xs italic">
               Played as {credit.character}
             </p>
+            <Link
+              to={`/movies/${credit.id}`}
+              className="bg-brand text-text-primary mt-2 rounded px-2 py-1 text-center font-semibold"
+            >
+              Show more
+            </Link>
           </div>
         ))}
       </div>

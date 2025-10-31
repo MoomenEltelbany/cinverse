@@ -98,3 +98,10 @@ export async function fetchSeriesCredits(id) {
 
   return data;
 }
+
+// Get similar series based on the chosen series ID
+export async function fetchSimilarSeries(id) {
+  const data = tmdb(`/tv/${id}/similar`);
+
+  return data;
+}

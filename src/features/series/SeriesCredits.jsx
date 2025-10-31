@@ -9,6 +9,9 @@ import "swiper/css/pagination";
 function SeriesCredits({ credits }) {
   const { cast } = credits;
   const topCastMembers = cast.slice(0, 20);
+  console.log(topCastMembers);
+
+  if (topCastMembers.length === 0) return null;
 
   return (
     <Main>
@@ -19,9 +22,7 @@ function SeriesCredits({ credits }) {
       <div className="bg-surface-card rounded px-4 py-6">
         <Swiper
           modules={[Navigation, Pagination]}
-          pagination={{
-            clickable: true,
-          }}
+          pagination={{ clickable: true }}
           navigation
           spaceBetween={24}
           slidesPerView={2}

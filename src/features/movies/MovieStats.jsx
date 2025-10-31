@@ -25,7 +25,7 @@ function MovieStats({ movie }) {
         </MovieStatData>
 
         <MovieStatData icon={FaRegStar} title="Ratings">
-          ⭐️ {movie.vote_average}
+          ⭐️ {movie.vote_average} ({movie.vote_count} votes)
         </MovieStatData>
 
         <MovieStatData icon={LuBlocks} title="Genres">

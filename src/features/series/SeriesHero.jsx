@@ -28,7 +28,7 @@ function SeriesHero({ series }) {
           Featured Title
         </h3>
         <p className="text-text-secondary mb-3 text-2xl leading-tight font-semibold sm:text-4xl">
-          {series.title}
+          {series.name}
         </p>
         <p className="text-text-tertiary text-sm leading-snug font-medium italic sm:text-xl">
           {series.tagline}

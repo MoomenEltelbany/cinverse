@@ -38,7 +38,7 @@ function PopularSeriesCard({ series, isAiringToday }) {
         to={`/series/${series.id}`}
         className="bg-surface-alt mt-auto w-full rounded py-2 text-center font-semibold transition-colors duration-200 hover:bg-black"
       >
-        Show Movie Details
+        Show Series Details
       </Link>
     </div>
   );

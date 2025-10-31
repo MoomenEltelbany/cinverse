@@ -7,8 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import PopularSeriesCard from "./PopularSeriesCard";
 
-function PopularSeries({ allSeries, fetchMore }) {
-  const [series, setSeries] = useState(allSeries);
+function SeriesSection({
+  title,
+  text,
+  seriesArray,
+  fetchMore,
+  isAiringToday = false,
+}) {
+  const [series, setSeries] = useState(seriesArray);
   const [page, setPage] = useState(2);
 
   useEffect(() => {
@@ -38,13 +44,8 @@ function PopularSeries({ allSeries, fetchMore }) {
 
   return (
     <Main>
-      <h2 className="text-text-primary text-2xl font-semibold">
-        Our Top Rated Series
-      </h2>
-      <p className="text-text-secondary mb-4 text-sm">
-        Fan favorites and critic darlings—these top series redefine storytelling
-        and demand to be binged.
-      </p>
+      <h2 className="text-text-primary text-2xl font-semibold">{title}</h2>
+      <p className="text-text-secondary mb-4 text-sm">{text}</p>
       <div>
         <Swiper
           navigation={true}
@@ -59,7 +60,10 @@ function PopularSeries({ allSeries, fetchMore }) {
         >
           {series.map((series, index) => (
             <SwiperSlide key={`${series.id}-${page}-${index}`}>
-              <PopularSeriesCard series={series} />
+              <PopularSeriesCard
+                series={series}
+                isAiringToday={isAiringToday}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -68,4 +72,4 @@ function PopularSeries({ allSeries, fetchMore }) {
   );
 }
 
-export default PopularSeries;
+export default SeriesSection;

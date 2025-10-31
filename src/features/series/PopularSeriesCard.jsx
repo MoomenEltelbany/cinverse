@@ -5,17 +5,23 @@ import MediaImage from "../../components/common/MediaImage";
 import { formatDate } from "../../utils/dateUtils";
 import { getSeriesGenreName } from "../../services/seriesApi";
 
-function PopularSeriesCard({ series }) {
+function PopularSeriesCard({ series, isAiringToday }) {
   return (
-    <div className="bg-surface-card border-border-subtle flex h-[650px] flex-col gap-2 rounded border p-5 shadow shadow-black">
-      <div className="mx-auto">
-        <MediaImage path={series.poster_path} />
+    <div className="bg-surface-card border-border-subtle flex h-[650px] min-h-fit flex-col gap-2 rounded border p-5 shadow shadow-black">
+      <div className="relative mx-auto">
+        {isAiringToday && (
+          <p className="absolute -top-2.5 -right-2.5 rounded bg-red-500 px-2 py-1 text-[10px] font-bold">
+            New Episode
+          </p>
+        )}
+        <MediaImage
+          path={series.poster_path}
+          alt={`The photo of ${series.name}`}
+        />
       </div>
-      <h3 className="text-text-primary text-lg font-semibold">
-        {series.title}
-      </h3>
+      <h3 className="text-text-primary text-lg font-semibold">{series.name}</h3>
       <p className="text-text-tertiary text-sm">
-        {formatDate(series.release_date)}
+        {formatDate(series.first_air_date)}
       </p>
       <p>⭐ {series.vote_average}</p>
       <div className="flex flex-wrap gap-1.5">

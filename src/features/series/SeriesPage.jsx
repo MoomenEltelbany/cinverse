@@ -21,8 +21,6 @@ function SeriesPage() {
     upcomingSeries,
   } = useLoaderData();
 
-  console.log(upcomingSeries);
-
   return (
     <>
       <HeroSeriesSection />

@@ -27,7 +27,7 @@ function PopularSeriesCard({ series, isAiringToday }) {
       <div className="flex flex-wrap gap-1.5">
         {series["genre_ids"].map((item) => (
           <span
-            className="bg-surface-main inline-block rounded px-2 py-1"
+            className="bg-surface-main md:text-md inline-block rounded px-2 py-1 text-sm"
             key={item}
           >
             {getSeriesGenreName(item)}

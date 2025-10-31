@@ -84,3 +84,17 @@ export async function fetchUpcomingSeries(page = 1) {
 
   return data;
 }
+
+// Get the details of the series based on the ID
+export async function fetchSeriesDetails(id) {
+  const data = tmdb(`/tv/${id}`);
+
+  return data;
+}
+
+// Get the credits of the series based on the ID
+export async function fetchSeriesCredits(id) {
+  const data = tmdb(`/tv/${id}/credits`);
+
+  return data;
+}

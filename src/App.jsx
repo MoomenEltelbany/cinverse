@@ -24,6 +24,9 @@ import ActorDetails, {
 import GenrePage, {
   loader as genrePageLoader,
 } from "./features/genres/GenrePage";
+import SeriesDetails, {
+  loader as seriesDetailsLoader,
+} from "./features/series/SeriesDetails";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +60,11 @@ const router = createBrowserRouter([
         path: "series",
         element: <SeriesPage />,
         loader: seriesPageLoader,
+      },
+      {
+        path: "series/:seriesId",
+        element: <SeriesDetails />,
+        loader: seriesDetailsLoader,
       },
       {
         path: "watchlist",

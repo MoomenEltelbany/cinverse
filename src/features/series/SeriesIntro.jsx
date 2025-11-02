@@ -1,7 +1,6 @@
 import Main from "../../components/common/Main";
 
 function SeriesIntro() {
-  console.log(Date.now());
   return (
     <Main>
       <h2 className="text-text-primary mb-4 text-center text-2xl font-bold">

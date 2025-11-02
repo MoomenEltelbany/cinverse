@@ -30,8 +30,7 @@ function SeriesDetails() {
         </div>
       </div>
 
-      <SeriesSeasons />
-      {/* <SeriesRecommendations series={seriesRecommendations} /> */}
+      <SeriesSeasons series={seriesDetails} />
       <MediaRecommendations
         title="Series You Might Like"
         media={seriesRecommendations}

@@ -105,3 +105,10 @@ export async function fetchSimilarSeries(id) {
 
   return data;
 }
+
+// Get the data of a specific season in a series
+export async function fetchSeasonDetails(seriesId, seasonNumber) {
+  const data = tmdb(`/tv/${seriesId}/season/${seasonNumber}`);
+
+  return data;
+}

@@ -1,19 +1,20 @@
 import Main from "../../components/common/Main";
+import MediaStatsData from "../../components/common/MediaStatsData";
+
 import { formatDate, formatRuntime } from "../../utils/dateUtils";
 import { FaCalendar, FaRegStar, FaRegMoneyBillAlt } from "react-icons/fa";
 import { LuLanguages, LuBlocks } from "react-icons/lu";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import MovieStatData from "./MovieStatData";
 
 function MovieStats({ movie }) {
   return (
     <Main>
       <div className="text-text-primary flex min-w-2xs grow flex-col gap-5 lg:max-h-fit">
-        <MovieStatData icon={FaCalendar} title="Release year">
+        <MediaStatsData icon={FaCalendar} title="Release year">
           {formatDate(movie.release_date)}
-        </MovieStatData>
+        </MediaStatsData>
 
-        <MovieStatData icon={LuLanguages} title="Available languages">
+        <MediaStatsData icon={LuLanguages} title="Available languages">
           {movie?.spoken_languages.map((lang) => (
             <p
               className="bg-surface-alt w-fit rounded px-2 py-1"
@@ -22,13 +23,13 @@ function MovieStats({ movie }) {
               {lang.name}
             </p>
           ))}
-        </MovieStatData>
+        </MediaStatsData>
 
-        <MovieStatData icon={FaRegStar} title="Ratings">
+        <MediaStatsData icon={FaRegStar} title="Ratings">
           ⭐️ {movie.vote_average} ({movie.vote_count} votes)
-        </MovieStatData>
+        </MediaStatsData>
 
-        <MovieStatData icon={LuBlocks} title="Genres">
+        <MediaStatsData icon={LuBlocks} title="Genres">
           <div className="flex flex-wrap gap-2">
             {movie?.genres.map((genre) => (
               <p
@@ -39,15 +40,15 @@ function MovieStats({ movie }) {
               </p>
             ))}
           </div>
-        </MovieStatData>
+        </MediaStatsData>
 
-        <MovieStatData icon={AiOutlineClockCircle} title="Screen runtime">
+        <MediaStatsData icon={AiOutlineClockCircle} title="Screen runtime">
           {formatRuntime(movie.runtime)}
-        </MovieStatData>
+        </MediaStatsData>
 
-        <MovieStatData icon={FaRegMoneyBillAlt} title="Movie's revenue">
+        <MediaStatsData icon={FaRegMoneyBillAlt} title="Movie's revenue">
           $ {movie.revenue.toLocaleString()}
-        </MovieStatData>
+        </MediaStatsData>
       </div>
     </Main>
   );

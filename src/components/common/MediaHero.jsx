@@ -1,6 +1,6 @@
-import MediaImage from "../../components/common/MediaImage";
+import MediaImage from "./MediaImage";
 
-function MovieHero({ movie }) {
+function MediaHero({ media }) {
   return (
     <div className="relative h-fit overflow-hidden lg:h-svh">
       {/* Overlay */}
@@ -15,8 +15,8 @@ function MovieHero({ movie }) {
       {/* Hero image */}
       <div className="max-h-svh">
         <MediaImage
-          path={movie.backdrop_path}
-          alt={`${movie.title} Image`}
+          path={media.backdrop_path}
+          alt={`${media.title} Image`}
           size="original"
           className="h-full w-full object-cover"
         />
@@ -28,14 +28,14 @@ function MovieHero({ movie }) {
           Featured Title
         </h3>
         <p className="text-text-secondary mb-3 text-2xl leading-tight font-semibold sm:text-4xl">
-          {movie.title}
+          {media.name}
         </p>
         <p className="text-text-tertiary text-sm leading-snug font-medium italic sm:text-xl">
-          {movie.tagline}
+          {media.tagline}
         </p>
       </div>
     </div>
   );
 }
 
-export default MovieHero;
+export default MediaHero;

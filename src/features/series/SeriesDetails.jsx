@@ -4,11 +4,12 @@ import {
   fetchSeriesCredits,
   fetchSimilarSeries,
 } from "../../services/seriesApi";
-import SeriesHero from "./SeriesHero";
-import SeriesDescription from "./SeriesDescription";
-import SeriesCredits from "./SeriesCredits";
 import SeriesStats from "./SeriesStats";
-import SeriesRecommendations from "./SeriesRecommendations";
+import SeriesSeasons from "./SeriesSeasons";
+import MediaRecommendations from "../../components/common/MediaRecommendations";
+import MediaHero from "../../components/common/MediaHero";
+import MediaDescription from "../../components/common/MediaDescription";
+import MediaCredits from "../../components/common/MediaCredits";
 
 /* eslint-disable react-refresh/only-export-components */
 function SeriesDetails() {
@@ -17,18 +18,24 @@ function SeriesDetails() {
 
   return (
     <section>
-      <SeriesHero series={seriesDetails} />
+      <MediaHero media={seriesDetails} />
       <div className="flex flex-col-reverse gap-6 lg:flex-row lg:gap-4">
         <div className="min-w-0 flex-1">
-          <SeriesDescription series={seriesDetails} />
-          <SeriesCredits credits={seriesCredits} />
+          <MediaDescription media={seriesDetails} />
+          <MediaCredits credits={seriesCredits} />
         </div>
 
         <div className="w-full shrink-0 lg:w-[300px]">
           <SeriesStats series={seriesDetails} />
         </div>
       </div>
-      <SeriesRecommendations series={seriesRecommendations} />
+
+      <SeriesSeasons />
+      {/* <SeriesRecommendations series={seriesRecommendations} /> */}
+      <MediaRecommendations
+        title="Series You Might Like"
+        media={seriesRecommendations}
+      />
     </section>
   );
 }

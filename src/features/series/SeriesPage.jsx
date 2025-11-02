@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
-import HeroSeriesSection from "./HeroSeriesSection";
 import SeriesIntro from "./SeriesIntro";
 import SeriesSection from "./SeriesSection";
 
@@ -11,6 +10,9 @@ import {
   fetchAiringTodaySeries,
   fetchUpcomingSeries,
 } from "../../services/seriesApi";
+
+import seriesSection from "../../assets/series_section.jpg";
+import CategoryHero from "../../components/common/CategoryHero";
 
 function SeriesPage() {
   const {
@@ -23,7 +25,15 @@ function SeriesPage() {
 
   return (
     <>
-      <HeroSeriesSection />
+      <CategoryHero
+        title="Step Into the World of Series"
+        text="From gripping thrillers and heartfelt dramas to laugh-out-loud sitcoms
+          and epic sagas, our series library is built for binge-watchers and
+          story lovers alike. Explore seasons of storytelling, follow
+          unforgettable characters, and curate your own watchlist of must-see
+          shows. Your next obsession starts here."
+        image={seriesSection}
+      />
       <SeriesIntro />
       {/* Top Rated section */}
       <SeriesSection

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-function SeriesStatData({ title, icon: Icon, children }) {
+function MediaStatsData({ title, icon: Icon, children }) {
   return (
     <div>
       <h3 className="text-text-tertiary mb-2 flex items-center gap-2">
@@ -13,4 +13,4 @@ function SeriesStatData({ title, icon: Icon, children }) {
   );
 }
 
-export default SeriesStatData;
+export default MediaStatsData;

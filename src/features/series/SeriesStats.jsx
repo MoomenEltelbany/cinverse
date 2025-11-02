@@ -1,8 +1,9 @@
 import Main from "../../components/common/Main";
+import MediaStatsData from "../../components/common/MediaStatsData";
+
 import { formatDate } from "../../utils/dateUtils";
 import { FaCalendar, FaRegStar } from "react-icons/fa";
 import { LuLanguages, LuBlocks } from "react-icons/lu";
-import SeriesStatData from "./SeriesStatsData";
 import { MdNumbers } from "react-icons/md";
 import { GrStatusInfo } from "react-icons/gr";
 
@@ -10,14 +11,14 @@ function SeriesStats({ series }) {
   return (
     <Main>
       <div className="text-text-primary flex min-w-2xs grow flex-col gap-5 lg:max-h-fit">
-        <SeriesStatData icon={FaCalendar} title="Air Dates">
+        <MediaStatsData icon={FaCalendar} title="Air Dates">
           <p>First: {formatDate(series.first_air_date)}</p>
           {series.last_air_date && (
             <p>Last: {formatDate(series.last_air_date)}</p>
           )}
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={LuLanguages} title="Available languages">
+        <MediaStatsData icon={LuLanguages} title="Available languages">
           {series?.spoken_languages.map((lang) => (
             <p
               className="bg-surface-alt w-fit rounded px-2 py-1"
@@ -26,21 +27,21 @@ function SeriesStats({ series }) {
               {lang.name}
             </p>
           ))}
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={FaRegStar} title="Ratings">
+        <MediaStatsData icon={FaRegStar} title="Ratings">
           ⭐️ {series.vote_average} ({series.vote_count} votes)
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={MdNumbers} title="Number of episodes">
+        <MediaStatsData icon={MdNumbers} title="Number of episodes">
           {series.number_of_episodes}
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={MdNumbers} title="Number of seasons">
+        <MediaStatsData icon={MdNumbers} title="Number of seasons">
           {series.number_of_seasons}
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={LuBlocks} title="Genres">
+        <MediaStatsData icon={LuBlocks} title="Genres">
           <div className="flex flex-wrap gap-2">
             {series?.genres.map((genre) => (
               <p
@@ -51,11 +52,11 @@ function SeriesStats({ series }) {
               </p>
             ))}
           </div>
-        </SeriesStatData>
+        </MediaStatsData>
 
-        <SeriesStatData icon={GrStatusInfo} title="Series Status">
+        <MediaStatsData icon={GrStatusInfo} title="Series Status">
           {series.status}
-        </SeriesStatData>
+        </MediaStatsData>
       </div>
     </Main>
   );

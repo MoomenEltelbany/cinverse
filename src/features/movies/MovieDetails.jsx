@@ -8,23 +8,23 @@ import {
 } from "../../services/moviesAPI";
 
 import MovieStats from "./MovieStats";
-import MovieDescription from "./MovieDescription";
-import MovieCast from "./MovieCast";
-import MovieHero from "./MovieHero";
-import MoviesRecommendations from "./MoviesRecommendations";
+import MediaRecommendations from "../../components/common/MediaRecommendations";
+import MediaHero from "../../components/common/MediaHero";
+import MediaDescription from "../../components/common/MediaDescription";
+import MediaCredits from "../../components/common/MediaCredits";
 
 function MovieDetails() {
   const { movie, castData, moviesRecommendations } = useLoaderData();
 
   return (
     <section>
-      <MovieHero movie={movie} />
+      <MediaHero media={movie} />
 
       <div className="flex flex-col-reverse gap-6 lg:flex-row lg:gap-4">
         {/* Main content: description, cast, overview */}
         <div className="min-w-0 flex-1">
-          <MovieDescription movie={movie} />
-          <MovieCast castData={castData} />
+          <MediaDescription media={movie} />
+          <MediaCredits credits={castData} />
         </div>
 
         {/* Sidebar: stats */}
@@ -32,7 +32,10 @@ function MovieDetails() {
           <MovieStats movie={movie} />
         </div>
       </div>
-      <MoviesRecommendations movies={moviesRecommendations} />
+      <MediaRecommendations
+        title="Movies You Might Like"
+        media={moviesRecommendations}
+      />
     </section>
   );
 }

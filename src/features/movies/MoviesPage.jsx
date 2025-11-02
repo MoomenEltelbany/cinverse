@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
 
-import MoviesHero from "./MoviesHero";
 import MoviesTitle from "./MoviesTitle";
 import MoviesGenres from "./MoviesGenres";
 import MoviesSection from "./MoviesSection";
@@ -14,6 +13,9 @@ import {
   fetchPopularMovies,
 } from "../../services/moviesAPI";
 
+import moviesSection from "../../assets/movies_section.jpg";
+import CategoryHero from "../../components/common/CategoryHero";
+
 function MoviesPage() {
   const {
     genres,
@@ -25,7 +27,15 @@ function MoviesPage() {
 
   return (
     <>
-      <MoviesHero />
+      <CategoryHero
+        title="Explore the World of Movies"
+        text=" Dive into our curated collection of films—from timeless classics to
+          the latest blockbusters. Whether you're in the mood for heart-pounding
+          action, emotional drama, or laugh-out-loud comedy, our movie library
+          has something for every kind of movies. Discover, watch, and build
+          your personal watchlist with ease."
+        image={moviesSection}
+      />
       <MoviesTitle />
       <MoviesGenres genres={genres} />
       <MoviesSection

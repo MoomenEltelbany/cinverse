@@ -14,7 +14,7 @@ function GenrePage() {
   return (
     <Main>
       <h2 className="text-text-primary mb-5 text-center text-3xl font-semibold uppercase">
-        Latest {genreName} Releases
+        Some of our {genreName} Releases
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {movies.map((movie) => (

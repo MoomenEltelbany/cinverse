@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import MediaImage from "../../components/common/MediaImage";
+import MediaImage from "./MediaImage";
 
-function MovieCastCard({ cast }) {
+function MediaCastCard({ cast }) {
   return (
     <div className="group perspective-1000px w-full max-w-[200px]">
       <div className="relative h-[280px] w-full transition-transform duration-700 transform-3d group-hover:transform-[rotateY(180deg)]">
@@ -36,4 +36,4 @@ function MovieCastCard({ cast }) {
   );
 }
 
-export default MovieCastCard;
+export default MediaCastCard;

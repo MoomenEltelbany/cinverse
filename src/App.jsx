@@ -30,6 +30,9 @@ import SeriesDetails, {
 import SeasonDetails, {
   loader as seasonDetailsLoader,
 } from "./features/series/SeasonDetails";
+import SearchPage, {
+  loader as searchPageLoader,
+} from "./components/layout/SearchPage";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +76,11 @@ const router = createBrowserRouter([
         path: "/series/:seriesId/season/:seasonNumber",
         element: <SeasonDetails />,
         loader: seasonDetailsLoader,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+        loader: searchPageLoader,
       },
       {
         path: "watchlist",

@@ -8,8 +8,6 @@ import MediaImage from "../../components/common/MediaImage";
 function SeasonDetails() {
   const season = useLoaderData();
 
-  console.log(season);
-
   return (
     <>
       <section className="bg-surface-card relative flex flex-col gap-3 rounded-lg p-6 shadow-md lg:flex-row">

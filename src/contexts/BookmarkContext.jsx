@@ -12,8 +12,6 @@ function reducer(state, action) {
 
       if (exists) return state;
 
-      console.log("media added successfully");
-
       return [...state, action.payload];
     }
 

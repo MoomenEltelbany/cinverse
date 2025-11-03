@@ -1,34 +1,17 @@
 import { Link } from "react-router-dom";
 
-import { CiBookmark } from "react-icons/ci";
-import { FaBookmark } from "react-icons/fa";
+import MediaImage from "./MediaImage";
 
 import toast from "react-hot-toast";
-import { useBookmarks } from "../../contexts/BookmarkContext";
-import MediaImage from "./MediaImage";
+
 import { formatDate } from "../../utils/dateUtils";
 import { getGenreName } from "../../services/moviesAPI";
 import { getSeriesGenreName } from "../../services/seriesApi";
+import { useWatchlist } from "../../contexts/WatchlistContext";
+import BookmarkButtons from "./BookmarkButtons";
+import WatchlistButtons from "./WatchlistButtons";
 
 function PopularMediaCard({ media, isAiringToday }) {
-  const { state, dispatch } = useBookmarks();
-
-  console.log(media);
-
-  const isBookmarked = state.some((item) => item.id === media.id);
-
-  function handleToggleBookmark() {
-    const name = media.title || media.name || "The movie";
-
-    if (isBookmarked) {
-      dispatch({ type: "media/remove", payload: media.id });
-      toast.success(`${name} was removed successfully from your Favorites`);
-    } else {
-      dispatch({ type: "media/add", payload: media });
-      toast.success(`${name} was added successfully from your Favorites`);
-    }
-  }
-
   // I made this component reusable for both of series and movies, so I had to make some tweaks to make it reusable for both, so those two lines are define what to display based if it's a movie or a series
   const categoryType = media.name ? "series" : "movies";
 
@@ -38,18 +21,7 @@ function PopularMediaCard({ media, isAiringToday }) {
 
   return (
     <div className="bg-surface-card border-border-subtle relative flex h-[720px] min-h-fit flex-col gap-2 rounded border p-5 shadow shadow-black">
-      {isBookmarked ? (
-        <FaBookmark
-          className="absolute top-0 left-0 cursor-pointer text-3xl text-red-500"
-          onClick={handleToggleBookmark}
-        />
-      ) : (
-        <CiBookmark
-          className="absolute top-0 left-0 cursor-pointer text-3xl text-red-500"
-          onClick={handleToggleBookmark}
-        />
-      )}
-
+      <BookmarkButtons media={media} />
       <div className="mx-auto">
         {isAiringToday && (
           <p className="absolute top-5 right-3 rounded bg-red-500 px-2 py-1 text-[10px] font-bold">
@@ -94,9 +66,7 @@ function PopularMediaCard({ media, isAiringToday }) {
           {categoryType === "movies" ? categoryType.slice(0, -1) : categoryType}{" "}
           details
         </Link>
-        <button className="bg-surface-alt w-full cursor-pointer rounded py-2 text-center font-semibold transition-colors duration-200 hover:bg-black">
-          + Add to your watch list
-        </button>
+        <WatchlistButtons media={media} />
       </div>
     </div>
   );

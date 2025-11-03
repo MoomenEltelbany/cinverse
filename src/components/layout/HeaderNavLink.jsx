@@ -7,7 +7,7 @@ function HeaderNavLink({ title, to }) {
         to={to}
         className={({ isActive }) =>
           [
-            "block rounded-4xl px-3 py-1.5 transition-colors outline-none",
+            "relative z-50 block rounded-4xl px-3 py-1.5 transition-colors outline-none",
             "focus-visible:ring-primary focus-visible:ring-2",
             isActive
               ? "bg-border-subtle text-white"

@@ -17,7 +17,7 @@ function CategoryHero({ title, text, image }) {
           className="h-dvh w-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 top-[30%] z-20 flex flex-col items-center justify-center px-4 text-center">
+      <div className="absolute inset-0 top-[30%] z-10 flex flex-col items-center justify-center px-4 text-center">
         <h2 className="text-text-primary text-lg font-semibold uppercase lg:text-4xl">
           {title}
         </h2>

@@ -2,6 +2,8 @@ import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { fetchMoviesByGenre } from "../../services/genresApi";
 import Main from "../../components/common/Main";
 import MediaImage from "../../components/common/MediaImage";
+import WatchlistButtons from "../../components/common/WatchlistButtons";
+import BookmarkButtons from "../../components/common/BookmarkButtons";
 
 /* eslint-disable react-refresh/only-export-components */
 function GenrePage() {
@@ -20,9 +22,10 @@ function GenrePage() {
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="bg-surface-alt border-border-strong flex min-w-[140px] shrink-0 flex-col rounded border p-2 shadow-sm transition-transform duration-200 hover:scale-105"
+            className="bg-surface-main border-border-strong relative flex min-w-[140px] shrink-0 flex-col rounded border p-2 shadow-sm"
           >
             <div className="mb-5">
+              <BookmarkButtons media={movie} />
               <MediaImage
                 path={movie.poster_path}
                 size="original"
@@ -37,10 +40,11 @@ function GenrePage() {
 
             <Link
               to={`/movies/${movie.id}`}
-              className="hover:bg-text-primary rounded bg-red-500 px-2 py-1 text-center transition-colors duration-200 hover:text-red-500"
+              className="hover:bg-text-primary mb-2 rounded bg-red-500 px-2 py-1 text-center transition-colors duration-200 hover:text-red-500"
             >
               Show More
             </Link>
+            <WatchlistButtons media={movie} />
           </div>
         ))}
       </div>

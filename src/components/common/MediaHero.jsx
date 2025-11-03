@@ -24,7 +24,7 @@ function MediaHero({ media }) {
       </div>
 
       {/* Text overlay */}
-      <div className="absolute inset-0 z-50 flex flex-col items-center justify-center px-4 text-center">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
         <h3 className="text-text-primary mb-2 text-base font-bold uppercase sm:text-xl">
           Featured Title
         </h3>

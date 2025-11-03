@@ -11,7 +11,7 @@ const NAV_Links = [
 function HeaderNav() {
   return (
     <nav aria-label="Primary">
-      <ul className="bg-surface-main border-border-subtle flex items-center justify-center gap-3 rounded-2xl border px-3 py-1.5">
+      <ul className="bg-surface-main border-border-subtle relative z-50 flex items-center justify-center gap-3 rounded-2xl border px-3 py-1.5">
         {NAV_Links.map((link) => (
           <HeaderNavLink key={link.title} title={link.title} to={link.to} />
         ))}

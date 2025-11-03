@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 
 import MediaImage from "./MediaImage";
-
-import toast from "react-hot-toast";
+import BookmarkButtons from "./BookmarkButtons";
+import WatchlistButtons from "./WatchlistButtons";
 
 import { formatDate } from "../../utils/dateUtils";
 import { getGenreName } from "../../services/moviesAPI";
 import { getSeriesGenreName } from "../../services/seriesApi";
-import { useWatchlist } from "../../contexts/WatchlistContext";
-import BookmarkButtons from "./BookmarkButtons";
-import WatchlistButtons from "./WatchlistButtons";
 
 function PopularMediaCard({ media, isAiringToday }) {
   // I made this component reusable for both of series and movies, so I had to make some tweaks to make it reusable for both, so those two lines are define what to display based if it's a movie or a series

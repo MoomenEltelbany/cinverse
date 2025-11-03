@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import PopularSeriesCard from "./PopularSeriesCard";
+import PopularMediaCard from "../../components/common/PopularMediaCard";
 
 function SeriesSection({
   title,
@@ -60,10 +61,7 @@ function SeriesSection({
         >
           {series.map((series, index) => (
             <SwiperSlide key={`${series.id}-${page}-${index}`}>
-              <PopularSeriesCard
-                series={series}
-                isAiringToday={isAiringToday}
-              />
+              <PopularMediaCard media={series} isAiringToday={isAiringToday} />
             </SwiperSlide>
           ))}
         </Swiper>

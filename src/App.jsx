@@ -34,6 +34,8 @@ import SearchPage, {
   loader as searchPageLoader,
 } from "./components/layout/SearchPage";
 
+import { BookmarksProvider } from "./contexts/BookmarkContext";
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -100,7 +102,7 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <>
+    <BookmarksProvider>
       <Toaster
         position="top-center"
         gutter={12}
@@ -130,6 +132,6 @@ export default function App() {
       />
 
       <RouterProvider router={router} />
-    </>
+    </BookmarksProvider>
   );
 }

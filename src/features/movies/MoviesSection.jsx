@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-import MovieCard from "./MovieCard";
 import Main from "../../components/common/Main";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import PopularMediaCard from "../../components/common/PopularMediaCard";
 
 function MoviesSection({ title, text, moviesArray, fetchMore }) {
   const [movies, setMovies] = useState(moviesArray);
@@ -54,7 +54,7 @@ function MoviesSection({ title, text, moviesArray, fetchMore }) {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={`${movie.id}-${page}-${index}`}>
-            <MovieCard movie={movie} />
+            <PopularMediaCard media={movie} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -3,7 +3,7 @@ import { useLoaderData, useSearchParams } from "react-router-dom";
 import { fetchMediaBySearch } from "../../services/searchApi";
 
 import Main from "../common/Main";
-import SearchResultCard from "../common/SearchResultCard";
+import PopularMediaCard from "../common/PopularMediaCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -72,7 +72,7 @@ function SearchPage() {
         >
           {searchResults.map((media, index) => (
             <SwiperSlide key={`${media.id}-${page}-${index}`}>
-              <SearchResultCard media={media} />
+              <PopularMediaCard media={media} />
             </SwiperSlide>
           ))}
         </Swiper>

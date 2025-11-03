@@ -34,16 +34,18 @@ function PopularMediaCard({ media, isAiringToday }) {
 
   const getGenre = media.name ? getSeriesGenreName : getGenreName;
 
+  const genres = media.genre_ids ?? [];
+
   return (
     <div className="bg-surface-card border-border-subtle relative flex h-[720px] min-h-fit flex-col gap-2 rounded border p-5 shadow shadow-black">
       {isBookmarked ? (
         <FaBookmark
-          className="absolute top-0 left-0 z-40 cursor-pointer text-3xl text-red-500"
+          className="absolute top-0 left-0 cursor-pointer text-3xl text-red-500"
           onClick={handleToggleBookmark}
         />
       ) : (
         <CiBookmark
-          className="absolute top-0 left-0 z-40 cursor-pointer text-3xl text-red-500"
+          className="absolute top-0 left-0 cursor-pointer text-3xl text-red-500"
           onClick={handleToggleBookmark}
         />
       )}
@@ -59,7 +61,11 @@ function PopularMediaCard({ media, isAiringToday }) {
       <div className="mx-auto">
         <MediaImage
           path={media.poster_path}
-          alt={`Poster of ${media.title || media.name}`}
+          alt={
+            media.poster_path
+              ? `The photo of ${media.name}`
+              : `This photo can't be displayed`
+          }
         />
       </div>
       <h3 className="text-text-primary text-lg font-semibold">
@@ -70,7 +76,7 @@ function PopularMediaCard({ media, isAiringToday }) {
       </p>
       <p>⭐ {media.vote_average}</p>
       <div className="flex flex-wrap gap-1.5">
-        {media["genre_ids"].map((item) => (
+        {genres.map((item) => (
           <span
             className="bg-surface-main inline-block rounded px-2 py-1"
             key={item}
@@ -82,9 +88,11 @@ function PopularMediaCard({ media, isAiringToday }) {
       <div className="mt-auto flex flex-col gap-2">
         <Link
           to={`/${categoryType}/${media.id}`}
-          className="bg-surface-alt w-full rounded py-2 text-center font-semibold transition-colors duration-200 hover:bg-black"
+          className="bg-surface-alt w-full rounded py-2 text-center font-semibold capitalize transition-colors duration-200 hover:bg-black"
         >
-          Show {categoryType} Details
+          Show{" "}
+          {categoryType === "movies" ? categoryType.slice(0, -1) : categoryType}{" "}
+          details
         </Link>
         <button className="bg-surface-alt w-full cursor-pointer rounded py-2 text-center font-semibold transition-colors duration-200 hover:bg-black">
           + Add to your watch list

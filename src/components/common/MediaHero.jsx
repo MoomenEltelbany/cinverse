@@ -1,6 +1,7 @@
 import MediaImage from "./MediaImage";
 
 function MediaHero({ media }) {
+  console.log(media);
   return (
     <div className="relative h-fit overflow-hidden lg:h-svh">
       {/* Overlay */}
@@ -28,7 +29,7 @@ function MediaHero({ media }) {
           Featured Title
         </h3>
         <p className="text-text-secondary mb-3 text-2xl leading-tight font-semibold sm:text-4xl">
-          {media.name}
+          {media.name || media.title}
         </p>
         <p className="text-text-tertiary text-sm leading-snug font-medium italic sm:text-xl">
           {media.tagline}

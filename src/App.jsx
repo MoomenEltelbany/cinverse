@@ -36,6 +36,7 @@ import SearchPage, {
 
 import { BookmarksProvider } from "./contexts/BookmarkContext";
 import { WatchlistProvider } from "./contexts/WatchlistContext";
+import Form from "./components/layout/Form";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: <FavoritesPage />,
+      },
+      {
+        path: "form",
+        element: <Form />,
       },
       {
         path: "*",

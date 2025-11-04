@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/common/Button";
 import Main from "../../components/common/Main";
 import AccordionCard from "./AccordionCard";
@@ -71,7 +72,12 @@ function FAQSection() {
         </div>
 
         {/* TODO: A button that will take to a form to fill a question */}
-        <Button>Ask a Question</Button>
+        <Link
+          to="/form"
+          className="bg-brand text-text=primary hover:bg-surface-alt rounded px-2 py-1 font-semibold transition-colors duration-200"
+        >
+          Ask a Question
+        </Link>
       </div>
 
       {/* ACCORDION SECTION */}

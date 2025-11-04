@@ -19,7 +19,10 @@ function SearchPage() {
 
   const { results } = data;
 
-  const [searchResults, setSearchResults] = useState(results);
+  // We will sort the array of the movies that will appear in the search according to the popularity so that the most famous movies or series that has the query search parameter appears first
+  const sortedResults = results.sort((a, b) => b.popularity - a.popularity);
+
+  const [searchResults, setSearchResults] = useState(sortedResults);
   const [page, setPage] = useState(2);
 
   useEffect(() => {

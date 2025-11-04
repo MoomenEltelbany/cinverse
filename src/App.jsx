@@ -6,7 +6,7 @@ import "./index.css";
 import AppLayout from "./components/layout/AppLayout";
 import WatchListPage from "./features/watchlist/WatchListPage";
 import FavoritesPage from "./features/favorites/FavoritesPage";
-import HomePage from "./features/home/HomePage";
+import HomePage, { loader as homePageLoader } from "./features/home/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 
 import SeriesPage, {
@@ -44,6 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        loader: homePageLoader,
       },
       {
         path: "movies",

@@ -1,7 +1,7 @@
 import Main from "../../components/common/Main";
 import GenreCard from "./GenreCard";
 
-function CategoriesSection() {
+function CategoriesSection({ genresWithPosters }) {
   return (
     <Main>
       <div>
@@ -14,8 +14,13 @@ function CategoriesSection() {
         </p>
       </div>
       <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
-        {["Action", "Adventure", "Comedy", "Drama", "Horror"].map((genre) => (
-          <GenreCard key={genre} title={genre} />
+        {genresWithPosters.map((genre) => (
+          <GenreCard
+            key={genre.id}
+            title={genre.name}
+            posters={genre.posters}
+            genreId={genre.id}
+          />
         ))}
       </div>
     </Main>

@@ -52,7 +52,7 @@
           <li>Filter by genres and categories</li>
           <li>Personalized recommendations</li>
           <li>Bookmark your favorites</li>
-          <li>Create and manage watchlists</li>
+          <li>Create and manage watchlist</li>
         </ul>
       </td>
       <td>
@@ -209,7 +209,7 @@ Give a ⭐️ if you like this project!
 
 **Moomen Eltelbany**
 
-- 📧 Email: [moomen.eltelbany@gmail.com](mailto:moomen.eltelbany@gmail.com)
+- 📧 Email: [moomenmohamed4@gmail.com](mailto:moomenmohamed4@gmail.com)
 - 🐙 GitHub: [@MoomenEltelbany](https://github.com/MoomenEltelbany)
 - 💼 LinkedIn: [Moomen Eltelbany](https://www.linkedin.com/in/moomen-eltelbany/)
 

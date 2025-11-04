@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeaderNav from "./HeaderNav";
 import Logo from "./Logo";
 import SearchBar from "../common/SearchBar";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [location.pathname]);
 
   function toggleNav() {
     setIsNavOpen((prev) => !prev);
@@ -17,7 +23,7 @@ function Header() {
 
         {/* Mobile toggle button */}
         <button
-          className="text-text-primary text-xl md:hidden"
+          className="text-text-primary text-4xl md:hidden"
           onClick={toggleNav}
           aria-label="Toggle navigation"
         >
@@ -34,15 +40,16 @@ function Header() {
         </div>
       </div>
 
-      {/* Mobile nav dropdown */}
-      {isNavOpen && (
-        <div className="border-border-subtle bg-surface-alt border-t px-4 py-3 md:hidden">
-          <HeaderNav />
-          <div className="mt-3">
-            <SearchBar />
-          </div>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+          isNavOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        } bg-surface-alt border-border-subtle border-t px-4 py-3 backdrop-blur`}
+      >
+        <HeaderNav />
+        <div className="mt-3">
+          <SearchBar />
         </div>
-      )}
+      </div>
     </header>
   );
 }

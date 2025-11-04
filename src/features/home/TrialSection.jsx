@@ -23,12 +23,11 @@ function TrialSection() {
           <h3 className="text-text-primary text-3xl font-semibold">
             Start your free trial today!
           </h3>
-          <p className="text-text-tertiary my-4 text-base">
+          <p className="text-text-tertiary my-4 text-lg">
             This is a clear and concise call to action that encourages users to
             sign up for free trial of Cineverse
           </p>
         </div>
-        <Button type="primary">Start a free trial</Button>
       </div>
     </main>
   );

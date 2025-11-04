@@ -74,18 +74,21 @@
 ### Prerequisites
 
 Make sure you have the following installed:
+
 - **Node.js** 16.14.0 or higher
 - **npm** 8.0.0 or higher (or **yarn** 1.22.0+)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/MoomenEltelbany/cineverse.git
    cd cineverse
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -93,6 +96,7 @@ Make sure you have the following installed:
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    # or
@@ -100,7 +104,7 @@ Make sure you have the following installed:
    ```
 
 4. **Open your browser**
-   
+
    Navigate to [http://localhost:5173](http://localhost:5173) to see the app in action!
 
 ### Build for Production
@@ -164,16 +168,12 @@ cineverse/
 
 ## 🎯 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
 | `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-
-## 📸 Screenshots
-
-*(Add your application screenshots here)*
+| `npm run lint`    | Run ESLint               |
 
 ## 🤝 Contributing
 
